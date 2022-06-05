@@ -1,5 +1,6 @@
 package com.example.springinit.controller;
 
+import com.example.springinit.entity.Employee;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,14 +11,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/cars")
-public class CarController {
+@RequestMapping("/employees")
+public class EmployeeController {
 
-    @GetMapping("/cars")
-    public ResponseEntity<List<String>> getCarName(){
-        List<String>carName = new ArrayList<>();
-        carName.add("Toyota");
-        return new ResponseEntity<>(carName, HttpStatus.OK);
+    @GetMapping()
+    public ResponseEntity<List<Employee>> getCarName(){
+        List<Employee> employees = new ArrayList<>();
+        employees.add(new Employee("Abc"));
+        return new ResponseEntity<>(employees, HttpStatus.OK);
 
     }
 
